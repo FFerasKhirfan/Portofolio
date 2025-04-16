@@ -157,4 +157,44 @@ html {
   .container {
     padding: 0 1rem;
   }
+}
+
+/* Email popup styles */
+#email-copy-message {
+  font-family: 'Inter', sans-serif;
+}
+
+#email-copy-message .fixed {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #eee;
+  max-width: 90vw;
+}
+
+#email-to-copy {
+  border-color: #ddd;
+  border-radius: 4px;
+  outline: none;
+}
+
+#email-to-copy:focus {
+  border-color: #670b0a;
+}
+
+#copy-email-btn {
+  transition: background-color 0.2s ease;
+}
+
+#copy-email-btn:hover {
+  background-color: #4a0807;
+}
+
+#close-email-message {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+#close-email-message:hover {
+  color: #670b0a;
 } 

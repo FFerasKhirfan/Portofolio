@@ -184,4 +184,64 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Email link handler
+  const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+  
+  emailLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const email = this.href.split('?')[0].replace('mailto:', '');
+      const subject = this.href.includes('subject=') ? 
+        decodeURIComponent(this.href.split('subject=')[1].split('&')[0]) : '';
+      
+      // Try to open the default mail client
+      try {
+        // If clicking directly doesn't work, show a message with the email address
+        setTimeout(() => {
+          const wasHandled = document.hasFocus();
+          if (wasHandled) {
+            showEmailCopyMessage(email, subject);
+          }
+        }, 500);
+      } catch (err) {
+        // Fallback if there's an error
+        showEmailCopyMessage(email, subject);
+        e.preventDefault();
+      }
+    });
+  });
+  
+  function showEmailCopyMessage(email, subject) {
+    // Check if message already exists
+    if (document.getElementById('email-copy-message')) return;
+    
+    // Create a message element
+    const messageDiv = document.createElement('div');
+    messageDiv.id = 'email-copy-message';
+    messageDiv.innerHTML = `
+      <div class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-white p-4 rounded shadow-lg z-50 max-w-md text-center">
+        <p class="mb-2">If your email client didn't open, copy this address:</p>
+        <div class="flex items-center justify-center mb-2">
+          <input type="text" value="${email}" class="border px-2 py-1 mr-2 w-full" id="email-to-copy" readonly />
+          <button class="bg-[#670b0a] text-white px-3 py-1 rounded" id="copy-email-btn">Copy</button>
+        </div>
+        <p class="text-sm text-gray-600">Suggested subject: ${subject}</p>
+        <button class="mt-3 text-gray-500 text-sm" id="close-email-message">Close</button>
+      </div>
+    `;
+    
+    document.body.appendChild(messageDiv);
+    
+    // Add event listeners
+    document.getElementById('copy-email-btn').addEventListener('click', function() {
+      const emailInput = document.getElementById('email-to-copy');
+      emailInput.select();
+      document.execCommand('copy');
+      this.textContent = 'Copied!';
+    });
+    
+    document.getElementById('close-email-message').addEventListener('click', function() {
+      document.getElementById('email-copy-message').remove();
+    });
+  }
 }); 
