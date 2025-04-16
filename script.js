@@ -112,11 +112,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Update active button styles
         filterButtons.forEach(btn => {
-          btn.classList.remove('bg-purple-600', 'text-white');
+          btn.classList.remove('bg-[#670b0a]', 'text-white');
           btn.classList.add('bg-white', 'text-gray-700');
         });
         button.classList.remove('bg-white', 'text-gray-700');
-        button.classList.add('bg-purple-600', 'text-white');
+        button.classList.add('bg-[#670b0a]', 'text-white');
         
         // Filter projects - improved with faster transitions
         projectCards.forEach(card => {
