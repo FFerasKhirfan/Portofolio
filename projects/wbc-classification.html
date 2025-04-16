@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>White Blood Cell Classification CNN | Feras Khirfan</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#670b0a',
+              dark: '#4a0807',
+              light: '#8a110e',
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    :root {
+      --primary: #670b0a;
+      --primary-dark: #4a0807;
+      --primary-light: #8a110e;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+  <!-- ======= Header with back button ======= -->
+  <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+    <div class="container mx-auto px-4 md:px-0 flex justify-between items-center">
+      <a href="../home.html" class="flex items-center text-[#670b0a] hover:text-[#8a110e] transition-colors">
+        <i class="fas fa-arrow-left mr-2"></i>
+        <span>Back to Portfolio</span>
+      </a>
+      <a href="../home.html" class="font-bold text-xl text-[#670b0a]">Feras Khirfan</a>
+    </div>
+  </header>
+
+  <!-- ======= Project Hero ======= -->
+  <section class="bg-gradient-to-r from-[#670b0a] to-[#4a0807] text-white py-16">
+    <div class="container mx-auto px-4 md:px-0">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">White Blood Cell Classification CNN</h1>
+      <p class="text-xl mb-8 max-w-2xl">A deep learning system that classifies different types of white blood cells with high accuracy for faster disease diagnosis.</p>
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Python</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">TensorFlow</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Keras</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">NumPy</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Pandas</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">OpenCV</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Project Content ======= -->
+  <section class="py-16">
+    <div class="container mx-auto px-4 md:px-0">
+      <div class="grid md:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-bold mb-6">Project Overview</h2>
+          <p class="mb-6">The White Blood Cell Classification CNN is a machine learning system I developed to automate and accelerate the diagnosis of blood-related diseases. By leveraging deep learning techniques, the model can identify five different types of white blood cells from microscopic images, providing valuable diagnostic information to healthcare professionals.</p>
+          
+          <p class="mb-6">The system uses a TensorFlow Keras model (stored in blood_cell_classifier.h5) that I trained specifically for this purpose. The application preprocesses blood cell images by resizing them to 96×96 pixels and normalizing pixel values to a range of 0 to 1, ensuring consistent input for the neural network. I developed a user-friendly GUI using Tkinter that allows medical professionals to easily select and analyze images. The application also includes comprehensive error handling to manage exceptions during image loading or classification, with clear feedback displayed to users.</p>
+          
+          
+          <h2 class="text-2xl font-bold mb-6">Key Features</h2>
+          <ul class="list-disc pl-6 space-y-2 mb-8">
+            <li>93% classification accuracy across various WBC types (basophil, eosinophil, erythroblast, ig, lymphocyte, monocyte, neutrophil, platelet)</li>
+            <li>Data augmentation techniques to improve model robustness</li>
+            <li>Interpretable model results with visualization of feature activation</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold mb-6">Technical Implementation</h2>
+          <p class="mb-4">The project architecture consists of the following components:</p>
+          
+          <h3 class="text-xl font-semibold mb-4">1. Data Processing Pipeline</h3>
+          <p class="mb-6">I implemented a robust preprocessing pipeline that handles image normalization, contrast enhancement, and segmentation. This ensures the model can handle images from different microscopes and with varying quality. Data augmentation techniques such as rotation, flipping, and zoom were applied to expand the training dataset and improve model resilience.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">2. CNN Architecture</h3>
+          <p class="mb-6">I designed a custom convolutional neural network with 14 layers, including convolutional, pooling, batch normalization, and dropout layers. The architecture was carefully optimized to learn the distinctive morphological features of each cell type while minimizing overfitting. Transfer learning was also explored, with a fine-tuned VGG16 model serving as a comparative baseline.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">3. Model Training and Evaluation</h3>
+          <p class="mb-6">The model was trained on a dataset of 10,000+ labeled WBC images, with 5-fold cross-validation to ensure robustness. Hyperparameter optimization was performed using a combination of grid search and Bayesian optimization techniques. Performance was evaluated using metrics including accuracy, precision, recall, F1-score, and confusion matrices.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">4. Deployment Interface</h3>
+          <p class="mb-6">I developed a Tkinter-based desktop application that allows medical technicians to upload blood smear images and receive real-time classification results. The interface includes visualization tools that highlight cell features contributing to the classification, providing transparency and aiding in result verification.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">5. Distribution & Deployment</h3>
+          <p class="mb-6">To ensure widespread usability, I packaged the application using PyInstaller to create a standalone executable. This approach eliminated the need for end users to install Python or any dependencies, making the tool accessible to healthcare professionals regardless of their technical background. The packaged application includes all necessary model files and libraries while maintaining a small footprint.</p>
+          
+          
+          <h2 class="text-2xl font-bold mb-6">Results & Impact</h2>
+          <ul class="list-disc pl-6 space-y-2 mb-8">
+            <li>93% overall classification accuracy, comparable to expert hematologists</li>
+            <li>Huge reduction in the time required to analyze blood samples</li>
+            <li>Potential for integration with existing laboratory information systems</li>
+          </ul>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="md:col-span-1">
+          <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h3 class="text-xl font-semibold mb-4">Project Details</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-medium text-gray-500">Timeline</h4>
+                <p>2 months (2024)</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Role</h4>
+                <p>Lead AI Developer</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Client</h4>
+                <p>Healthcare Research Project</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h3 class="text-xl font-semibold mb-4">Technologies Used</h3>
+            <div class="space-y-3">
+              <div>
+                <h4 class="font-medium text-gray-500">Languages</h4>
+                <p>Python</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Frameworks & Libraries</h4>
+                <ul class="list-disc pl-5">
+                  <li>TensorFlow / Keras</li>
+                  <li>NumPy / Pandas</li>
+                  <li>OpenCV</li>
+                  <li>Tkinter</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Tools</h4>
+                <ul class="list-disc pl-5">
+                  <li>Google Colab</li>
+                  <li>Visual Studio Code</li>
+                  <li>Git/GitHub</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Additional Skills</h3>
+            <div class="space-y-2">
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Deep Learning</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Medical Imaging</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Data Augmentation</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Transfer Learning</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Class Imbalance Handling</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Hyperparameter Tuning</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Model Explainability</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Biomedical Applications</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Footer ======= -->
+  <footer class="bg-black text-gray-400 py-8">
+    <div class="container mx-auto px-4 md:px-0">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h2 class="text-2xl font-bold text-white">Feras Khirfan</h2>
+          <p class="mt-2">AI & Software Developer</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="mailto:feraskwork@gmail.com" aria-label="Email" class="text-gray-400 hover:text-white transition">
+            <i class="fas fa-envelope text-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/feraskhirfan2" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="tel:+966556652125" aria-label="Phone" class="text-gray-400 hover:text-white transition">
+            <i class="fas fa-phone text-xl"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+        <p>© <span id="year"></span> Feras Khirfan. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic Year Script -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html> 

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Sumo Robot | Feras Khirfan</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#670b0a',
+              dark: '#4a0807',
+              light: '#8a110e',
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    :root {
+      --primary: #670b0a;
+      --primary-dark: #4a0807;
+      --primary-light: #8a110e;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+  <!-- ======= Header with back button ======= -->
+  <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+    <div class="container mx-auto px-4 md:px-0 flex justify-between items-center">
+      <a href="../home.html" class="flex items-center text-[#670b0a] hover:text-[#8a110e] transition-colors">
+        <i class="fas fa-arrow-left mr-2"></i>
+        <span>Back to Portfolio</span>
+      </a>
+      <a href="../home.html" class="font-bold text-xl text-[#670b0a]">Feras Khirfan</a>
+    </div>
+  </header>
+
+  <!-- ======= Project Hero ======= -->
+  <section class="bg-gradient-to-r from-[#670b0a] to-[#4a0807] text-white py-16">
+    <div class="container mx-auto px-4 md:px-0">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">Autonomous Sumo Robot</h1>
+      <p class="text-xl mb-8 max-w-2xl">A competitive robot designed to detect and push opponents out of a circular ring without human intervention.</p>
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Arduino</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">C++</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Sensors</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Strategic Thinking</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Robotics</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Electronics</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Motor Control</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Project Content ======= -->
+  <section class="py-16">
+    <div class="container mx-auto px-4 md:px-0">
+      <div class="grid md:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-bold mb-6">Project Overview</h2>
+          <p class="mb-6">The Autonomous Sumo Robot is a competitive robotics project designed to compete in mini-sumo competitions. I designed and built a robot capable of detecting ring edges and opponent robots, implementing strategic movements, and executing offensive and defensive maneuvers—all without any human control during matches.</p>
+          
+          <!-- Project Gallery -->
+          <div class="grid grid-cols-2 gap-4 my-8">
+            <img src="../media/images/robotfront.jpeg" alt="Robot Front View" class="rounded-lg shadow-md w-full max-w-xs mx-auto h-auto">
+            <img src="../media/images/robotup.jpeg" alt="Robot Overhead View" class="rounded-lg shadow-md w-full max-w-xs mx-auto h-auto">
+            <img src="../media/images/Picture1robot.png" alt="Robot Design" class="rounded-lg shadow-md w-full max-w-xs mx-auto h-auto">
+            <img src="../media/images/Picture2robot.png" alt="Robot in Competition" class="rounded-lg shadow-md w-full max-w-xs mx-auto h-auto">
+          </div>
+          
+          <h2 class="text-2xl font-bold mb-6">Key Features</h2>
+          <ul class="list-disc pl-6 space-y-2 mb-8">
+            <li>Lightweight yet powerful design with high speed motors</li>
+            <li>3D printed chassis optimized for weight distribution and stability</li>
+            <li>Two line sensors for detecting ring edges (white lines)</li>
+            <li>infrared distance sensors for opponent detection</li>
+            <li>Rapid acceleration and direction change capabilities</li>
+            <li>Specialized attack based on opponent behavior</li>
+            <li>Low-latency sensor processing for real-time decision making</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold mb-6">Technical Implementation</h2>
+          <p class="mb-4">The project involved several technical components working together:</p>
+          
+          <h3 class="text-xl font-semibold mb-4">1. Mechanical Design</h3>
+          <p class="mb-6">The robot features a compact, low-profile chassis created with 3D printing. The design includes an angled front "plow" to get underneath opponents, a weighted rear section for enhanced stability, and a low center of gravity. High-torque DC motors with custom gear ratios were selected to provide the optimal balance of speed and pushing power. The wheels include high-friction rubber tires to maximize traction on the competition surface.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">2. Electronics and Sensors</h3>
+          <p class="mb-6">The robot uses an Arduino Nano as its main controller, connected to an array of sensors: two downward-facing line sensors for edge detection (white lines), and three IR proximity sensors for opponent detection. A dual H-bridge motor driver controls the motors, with power supplied by a high-discharge LiPo battery that provides bursts of current during rapid maneuvers.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">3. Software Architecture</h3>
+          <p class="mb-6">I developed a state-based control system in C++ that constantly evaluates sensor inputs and switches between different behavioral states: searching, tracking, attacking, and edge avoidance. The software employs sensor fusion techniques to improve detection reliability and includes a custom PID control system for precise motor movements. A key innovation was implementing a predictive tracking algorithm that anticipates opponent movement patterns.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">4. Strategy Implementation</h3>
+          <p class="mb-6">The robot employs multiple competitive strategies based on the specific situation. It begins with a 5-second scanning phase to locate the opponent, then executes either a direct charge, flanking maneuver, or feint-and-attack sequence. When near a ring edge, it rapidly calculates an optimal escape route while maintaining awareness of the opponent's position. The software also includes learning elements that adapt to opponent patterns throughout a match.</p>
+          
+
+          
+          <h2 class="text-2xl font-bold mb-6">Results & Impact</h2>
+          <ul class="list-disc pl-6 space-y-2 mb-8">
+            <li>Placed 1st in University Robotics Competition against 16 competing teams</li>
+            <li>Scored top 16 out of 200 in HTU National Robotics Competition 2023</li>
+            <li>Scored top 32 out of 200 in HTU National Robotics Competition 2024</li>
+            <li>Developed a reusable codebase that was adopted by junior teams for future competitions</li>
+            <li>Demonstrated practical applications of sensor fusion and real-time control systems</li>
+          </ul>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="md:col-span-1">
+          <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h3 class="text-xl font-semibold mb-4">Project Details</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-medium text-gray-500">Timeline</h4>
+                <p>4 months (2023)</p>
+                <p>3 months (2024)</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Role</h4>
+                <p>Hardware & Software Developer</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Competition</h4>
+                <p>University Robotics Challenge</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h3 class="text-xl font-semibold mb-4">Technologies Used</h3>
+            <div class="space-y-3">
+              <div>
+                <h4 class="font-medium text-gray-500">Hardware</h4>
+                <ul class="list-disc pl-5">
+                  <li>Arduino Nano</li>
+                  <li>DC Motors</li>
+                  <li>H-Bridge Motor Drivers</li>
+                  <li>IR Reflectance Sensors</li>
+                  <li>Line Sensors</li>
+                  <li>LiPo Battery</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Software</h4>
+                <ul class="list-disc pl-5">
+                  <li>C++ (Arduino)</li>
+                  <li>PID Control Library</li>
+                </ul>
+              </div>
+              <div>
+
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Additional Skills</h3>
+            <div class="space-y-2">
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Circuit Design</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Mechanical Design</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Sensor Integration</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Motor Control</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Embedded Programming</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Strategic Thinking</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Battery Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Footer ======= -->
+  <footer class="bg-black text-gray-400 py-8">
+    <div class="container mx-auto px-4 md:px-0">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h2 class="text-2xl font-bold text-white">Feras Khirfan</h2>
+          <p class="mt-2">AI & Software Developer</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="mailto:feraskwork@gmail.com" aria-label="Email" class="text-gray-400 hover:text-white transition">
+            <i class="fas fa-envelope text-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/feraskhirfan2" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="tel:+966556652125" aria-label="Phone" class="text-gray-400 hover:text-white transition">
+            <i class="fas fa-phone text-xl"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+        <p>© <span id="year"></span> Feras Khirfan. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic Year Script -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html> 

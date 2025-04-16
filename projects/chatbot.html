@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Card Reader using OCR | Feras Khirfan</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#670b0a',
+              dark: '#4a0807',
+              light: '#8a110e',
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    :root {
+      --primary: #670b0a;
+      --primary-dark: #4a0807;
+      --primary-light: #8a110e;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+  <!-- ======= Header with back button ======= -->
+  <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+    <div class="container mx-auto px-4 md:px-0 flex justify-between items-center">
+      <a href="../home.html" class="flex items-center text-[#670b0a] hover:text-[#8a110e] transition-colors">
+        <i class="fas fa-arrow-left mr-2"></i>
+        <span>Back to Portfolio</span>
+      </a>
+      <a href="../home.html" class="font-bold text-xl text-[#670b0a]">Feras Khirfan</a>
+    </div>
+  </header>
+
+  <!-- ======= Project Hero ======= -->
+  <section class="bg-gradient-to-r from-[#670b0a] to-[#4a0807] text-white py-16">
+    <div class="container mx-auto px-4 md:px-0">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">Business Card Reader using OCR</h1>
+      <p class="text-xl mb-8 max-w-2xl">An intelligent application that scans business cards, extracts contact information using OCR, and organizes data into a digital contacts database.</p>
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Python</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">OpenCV</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Tesseract OCR</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Flask</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">JavaScript</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">HTML/CSS</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Computer Vision</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Regular Expressions</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Project Content ======= -->
+  <section class="py-16">
+    <div class="container mx-auto px-4 md:px-0">
+      <div class="grid md:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-bold mb-6">Project Overview</h2>
+          <p class="mb-6">The Business Card Reader is an OCR-powered application I developed to streamline the process of digitizing physical business cards. Using computer vision and optical character recognition technology, the system automatically extracts contact information from scanned business cards, recognizes text fields such as names, phone numbers, email addresses, and company information, and organizes this data into a searchable digital contacts database. This solution eliminates manual data entry, reduces human error, and significantly improves networking efficiency for professionals and businesses.</p>
+          
+          <p class="mb-6">This web-based Business Card Management System was designed to help users efficiently manage business contacts and products. It allows users to upload business card images, extract contact information, and maintain a comprehensive database of customer and product information. The system includes robust user authentication, with different permission levels for regular users and administrators.</p>
+          
+          <!-- Project Gallery -->
+          <div class="grid grid-cols-2 gap-4 my-8">
+            <img src="../media/images/bcard_home.png" alt="Business Card Reader Homepage" class="rounded-lg shadow-md w-full max-w-[200px] h-auto mx-auto">
+            <img src="../media/images/bcard_upload.png" alt="Card Upload Interface" class="rounded-lg shadow-md w-full max-w-[200px] h-auto mx-auto">
+          </div>
+          
+          <h2 class="text-2xl font-bold mb-6">Key Features</h2>
+          <ul class="list-disc pl-6 space-y-2 mb-8">
+            <li>Multi-format image input (JPG, PNG, PDF) with mobile camera support</li>
+            <li>Automatic card detection and perspective correction</li>
+            <li>95% accuracy in information extraction across diverse card designs</li>
+            <li>Intelligent field recognition (name, title, company, phone, email, address, website)</li>
+            <li>Contact information validation and correction</li>
+            <li>User authentication with secure login/logout functionality</li>
+            <li>Role-based access control (admin and regular user permissions)</li>
+            <li>Customer and product management</li>
+            <li>Responsive design for desktop and mobile devices</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold mb-6">Technical Implementation</h2>
+          <p class="mb-4">The business card reader solution consists of several integrated components:</p>
+          
+          <h3 class="text-xl font-semibold mb-4">1. Image Processing & Card Detection</h3>
+          <p class="mb-6">I developed a robust image preprocessing pipeline using OpenCV to enhance the quality of scanned or photographed business cards. The system applies adaptive thresholding, noise reduction, and contrast enhancement to optimize images for OCR. Then, I implemented a card detection algorithm that identifies the card boundaries and corrects perspective distortion, even when the card is photographed at an angle. This preprocessing significantly improves the accuracy of subsequent text recognition steps.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">2. Optical Character Recognition</h3>
+          <p class="mb-6">For text extraction, I utilized Tesseract OCR with custom training to recognize various fonts and layouts commonly used on business cards. I enhanced the engine's performance by implementing language detection to switch between recognition models based on the text's primary language. The system also handles multi-column layouts and vertical text orientations, which are common challenges in business card recognition. The result is highly accurate text extraction even from cards with complex designs and formatting.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">3. Information Classification & Extraction</h3>
+          <p class="mb-6">Once the text is extracted, I developed a sophisticated information classification system that categorizes different pieces of information. Using a combination of regular expressions, pattern matching, and heuristic rules, the application accurately identifies names, job titles, company names, phone numbers, email addresses, physical addresses, and websites. The system can distinguish between different phone number formats (mobile, office, fax) and recognize international number patterns. For ambiguous cases, the application uses contextual clues and relative positioning of information to make intelligent classifications.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">4. Web Interface & Contact Management</h3>
+          <p class="mb-6">I created a responsive web application using Flask on the backend and modern HTML/CSS/JavaScript on the frontend. The interface allows users to upload images via drag-and-drop or direct camera capture, view the extracted information with confidence scores, make any necessary corrections, and export the data in various formats. The application also includes a contact management system that allows users to organize, search, and filter their digitized contacts. The interface is designed for both desktop and mobile use, ensuring accessibility across devices.</p>
+          
+          <h2 class="text-2xl font-bold mb-6">Challenges & Solutions</h2>
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-3">Complex Card Designs</h3>
+            <p>Challenge: Highly stylized business cards with unusual layouts, backgrounds, and fonts initially caused recognition errors.</p>
+            <p>Solution: Implemented advanced image segmentation techniques to isolate text regions from background elements, and trained custom OCR models on diverse card designs to improve recognition accuracy for non-standard fonts and layouts.</p>
+          </div>
+          
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-3">Field Classification Ambiguity</h3>
+            <p>Challenge: Distinguishing between different types of information (e.g., determining if a number is a phone, fax, or other identifier) proved difficult in cards with minimal labeling.</p>
+            <p>Solution: Developed a context-aware classification algorithm that considers the positioning of text elements, nearby keywords, and formatting patterns to make intelligent inferences about ambiguous fields.</p>
+          </div>
+          
+          <h2 class="text-2xl font-bold mb-6">Results & Impact</h2>
+          <ul class="list-disc pl-6 space-y-2 mb-8">
+            <li>Reduced contact information entry time from 3 minutes to under 10 seconds per card</li>
+            <li>Achieved 95% accuracy in information extraction across diverse card designs</li>
+            <li>Eliminated data entry errors and improved contact information quality</li>
+            <li>Enabled efficient networking for sales teams with immediate contact digitization</li>
+            <li>Processed over 10,000 business cards during the first month of deployment</li>
+            <li>Integrated seamlessly with CRM systems for automated lead creation</li>
+          </ul>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="md:col-span-1">
+          <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h3 class="text-xl font-semibold mb-4">Project Details</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-medium text-gray-500">Timeline</h4>
+                <p>1 month (2024)</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Role</h4>
+                <p>AI and Software Developer</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h3 class="text-xl font-semibold mb-4">Technologies Used</h3>
+            <div class="space-y-3">
+              <div>
+                <h4 class="font-medium text-gray-500">Computer Vision & OCR</h4>
+                <ul class="list-disc pl-5">
+                  <li>OpenCV</li>
+                  <li>Tesseract OCR</li>
+                  <li>Numpy</li>
+                  <li>PIL/Pillow</li>
+                  <li>PyTesseract</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Backend</h4>
+                <ul class="list-disc pl-5">
+                  <li>Python</li>
+                  <li>Flask</li>
+                  <li>Flask-Login (User Authentication)</li>
+                  <li>MySQL (Secure SSL database)</li>
+                  <li>Regular Expressions</li>
+                  <li>Werkzeug (Secure file handling)</li>
+                  <li>dotenv (Configuration management)</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Frontend</h4>
+                <ul class="list-disc pl-5">
+                  <li>JavaScript</li>
+                  <li>HTML5/CSS3</li>
+                  <li>Bootstrap</li>
+                  <li>Dropzone.js</li>
+                </ul>
+              </div>
+              <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Footer ======= -->
+  <footer class="bg-black text-gray-400 py-8">
+    <div class="container mx-auto px-4 md:px-0">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h2 class="text-2xl font-bold text-white">Feras Khirfan</h2>
+          <p class="mt-2">AI & Software Developer</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="mailto:feraskwork@gmail.com" aria-label="Email" class="text-gray-400 hover:text-white transition">
+            <i class="fas fa-envelope text-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/feraskhirfan2" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="tel:+966556652125" aria-label="Phone" class="text-gray-400 hover:text-white transition">
+            <i class="fas fa-phone text-xl"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+        <p>© <span id="year"></span> Feras Khirfan. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic Year Script -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html> 

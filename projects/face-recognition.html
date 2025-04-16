@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face Recognition Attendance System | Feras Khirfan</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#670b0a',
+              dark: '#4a0807',
+              light: '#8a110e',
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    :root {
+      --primary: #670b0a;
+      --primary-dark: #4a0807;
+      --primary-light: #8a110e;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+  <!-- ======= Header with back button ======= -->
+  <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+    <div class="container mx-auto px-4 md:px-0 flex justify-between items-center">
+      <a href="../home.html" class="flex items-center text-[#670b0a] hover:text-[#8a110e] transition-colors">
+        <i class="fas fa-arrow-left mr-2"></i>
+        <span>Back to Portfolio</span>
+      </a>
+      <a href="../home.html" class="font-bold text-xl text-[#670b0a]">Feras Khirfan</a>
+    </div>
+  </header>
+
+  <!-- ======= Project Hero ======= -->
+  <section class="bg-gradient-to-r from-[#670b0a] to-[#4a0807] text-white py-16">
+    <div class="container mx-auto px-4 md:px-0">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">Face Recognition Attendance System</h1>
+      <p class="text-xl mb-8 max-w-2xl">An intelligent system that automatically logs student attendance using photo-based facial recognition technology.</p>
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Python</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">YOLOV5</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">TensorFlow</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Flask</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">NoSQL</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">HTML/CSS</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Bootstrap</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">JavaScript</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Project Content ======= -->
+  <section class="py-16">
+    <div class="container mx-auto px-4 md:px-0">
+      <div class="grid md:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-bold mb-6">Project Overview</h2>
+          <p class="mb-6">The Face Recognition Attendance System is a streamlined solution I developed to simplify the attendance tracking process in educational environments. Using advanced computer vision and deep learning techniques, the system can identify students from one or two photos and automatically log their attendance in a secure database, eliminating the need for manual roll calls and paper-based systems.</p>
+          
+          <!-- Project Gallery -->
+          <div class="grid grid-cols-1 gap-4 my-8">
+            <video controls class="rounded-lg shadow-md w-full">
+              <source src="../media/videos/grad.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>            <p class="text-sm text-gray-600 mt-2">Demonstration video of the face recognition system.</p>
+          </div>
+          
+          <h2 class="text-2xl font-bold mb-6">Key Features</h2>
+          <ul class="list-disc pl-6 space-y-2 mb-8">
+            <li>Accurate face detection and recognition with 96% accuracy using a custom YOLO-based architecture</li>
+            <li>Ability to process class photos with up to 30 students in a single image</li>
+            <li>Works with just one or two reference photos per class</li>
+            <li>Secure user authentication system with role-based access control (admin, teacher, student)</li>
+            <li>Comprehensive dashboard with attendance statistics and historical data</li>
+            <li>Exportable reports in CSV format</li>
+            <li>Responsive web interface accessible from any device with appropriate permissions</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold mb-6">Technical Implementation</h2>
+          <p class="mb-4">The system architecture consists of four interconnected components:</p>
+          
+          <h3 class="text-xl font-semibold mb-4">1. Image Processing & Face Detection</h3>
+          <p class="mb-6">The core detection pipeline utilizes a modified YOLO (You Only Look Once) architecture optimized specifically for face detection. This initial stage processes uploaded photos, identifying all faces present with bounding boxes. The system employs image enhancement techniques to maintain detection accuracy across different lighting conditions and image qualities. For deployment in environments with varying photo conditions, I implemented adaptive exposure compensation that dynamically adjusts processing parameters based on image properties.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">2. Face Recognition Engine</h3>
+          <p class="mb-6">Once faces are detected, a secondary deep learning model handles the recognition task. I implemented a custom CNN architecture with Siamese networks for facial verification, trained on over 10,000 facial images collected with proper consent. The model extracts 128-dimensional face embeddings which are compared against a database of registered student embeddings using cosine similarity metrics. To ensure accuracy with limited training data, I incorporated data augmentation techniques that can generate multiple training samples from just one or two reference photos per student.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">3. Web Application & Dashboard</h3>
+          <p class="mb-6">The web interface was built using Flask for the backend and Bootstrap/JavaScript for a responsive frontend. It features separate dashboards for administrators, teachers, and students with appropriate access permissions. The admin dashboard provides system-wide metrics, user management, and configuration options. Teachers can upload class photos, view attendance data, generate reports, and manage their courses. Students can check their own attendance records and receive absence notifications. All interfaces include data visualization components using Chart.js for intuitive statistics presentation.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">4. Database & API Architecture</h3>
+          <p class="mb-6">The system uses a NoSQL database for flexible schema design and efficient scaling. Student data, facial embeddings, and attendance records are stored with proper encryption and access controls. I designed a comprehensive RESTful API layer with JWT authentication that enables secure communication between system components and potential integration with external university systems. The API follows a rate-limiting pattern to prevent abuse while maintaining high availability for legitimate requests.</p>
+          
+          <h2 class="text-2xl font-bold mb-6">Challenges & Solutions</h2>
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-3">Limited Reference Photos</h3>
+            <p>Challenge: Creating an accurate recognition system with only one or two reference photos per student.</p>
+            <p>Solution: I implemented advanced data augmentation techniques that generate multiple training samples from limited source images, including variations in lighting, rotation, and minor facial expressions. This approach improved recognition accuracy from 78% to 96% even with minimal reference images.</p>
+          </div>
+          
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-3">Performance Optimization</h3>
+            <p>Challenge: The initial system was computationally intensive, causing delays in recognition and requiring expensive GPU hardware for deployment.</p>
+            <p>Solution: I redesigned the architecture using model quantization techniques and optimized preprocessing to reduce resource usage. These improvements reduced processing time from 2.5s to 0.3s per photo while allowing the system to run efficiently on standard hardware configurations without dedicated GPUs.</p>
+          </div>
+          
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-3">Cross-Angle Recognition</h3>
+            <p>Challenge: Recognition accuracy degraded significantly when students were captured at different angles than their reference photos.</p>
+            <p>Solution: Implemented sophisticated data augmentation during training with multi-view synthesis and pose normalization techniques. Additionally, created pose-invariant feature extraction that can handle up to 45-degree head rotation, resulting in 94% accuracy even when angles differ between reference and attendance photos.</p>
+          </div>
+          
+          <h2 class="text-2xl font-bold mb-6">Results & Impact</h2>
+          <ul class="list-disc pl-6 space-y-2 mb-8">
+            <li>96% recognition accuracy with only one or two reference photos per class</li>
+            <li>Processing speed of under 1 second for a typical class photo with 25-30 students</li>
+            <li>85% reduction in administrative time spent on attendance management</li>
+            <li>System design has been adapted for additional use cases including event check-ins and secure access control</li>
+          </ul>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="md:col-span-1">
+          <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h3 class="text-xl font-semibold mb-4">Project Details</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-medium text-gray-500">Timeline</h4>
+                <p>4 months (2023)</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Role</h4>
+                <p>Lead Developer & ML Engineer</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Client</h4>
+                <p>University Research Project</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h3 class="text-xl font-semibold mb-4">Technologies Used</h3>
+            <div class="space-y-3">
+              <div>
+                <h4 class="font-medium text-gray-500">Languages</h4>
+                <p>Python, JavaScript, HTML/CSS</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Computer Vision & ML</h4>
+                <ul class="list-disc pl-5">
+                  <li>YOLO v5 (customized)</li>
+                  <li>OpenCV</li>
+                  <li>TensorFlow / Keras</li>
+                  <li>Facial Recognition API</li>
+                  <li>dlib (face landmarks)</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Web Technologies</h4>
+                <ul class="list-disc pl-5">
+                  <li>Flask</li>
+                  <li>RESTful APIs</li>
+                  <li>JWT Authentication</li>
+                  <li>Bootstrap</li>
+                  <li>Chart.js</li>
+                  <li>Socket.IO (real-time updates)</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Infrastructure</h4>
+                <ul class="list-disc pl-5">
+                  <li>NoSQL Database</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Additional Skills</h3>
+            <div class="space-y-2">
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Object Detection</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Image Processing</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Biometrics</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Model Optimization</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">API Design</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Authentication Systems</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">System Architecture</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Footer ======= -->
+  <footer class="bg-black text-gray-400 py-8">
+    <div class="container mx-auto px-4 md:px-0">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h2 class="text-2xl font-bold text-white">Feras Khirfan</h2>
+          <p class="mt-2">AI & Software Developer</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="mailto:feraskwork@gmail.com" aria-label="Email" class="text-gray-400 hover:text-white transition">
+            <i class="fas fa-envelope text-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/feraskhirfan2" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="tel:+966556652125" aria-label="Phone" class="text-gray-400 hover:text-white transition">
+            <i class="fas fa-phone text-xl"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+        <p>© <span id="year"></span> Feras Khirfan. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic Year Script -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html> 

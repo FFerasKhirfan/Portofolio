@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Portfolio Web Apps | Feras Khirfan</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#670b0a',
+              dark: '#4a0807',
+              light: '#8a110e',
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    :root {
+      --primary: #670b0a;
+      --primary-dark: #4a0807;
+      --primary-light: #8a110e;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+  <!-- ======= Header with back button ======= -->
+  <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+    <div class="container mx-auto px-4 md:px-0 flex justify-between items-center">
+      <a href="../home.html" class="flex items-center text-[#670b0a] hover:text-[#8a110e] transition-colors">
+        <i class="fas fa-arrow-left mr-2"></i>
+        <span>Back to Portfolio</span>
+      </a>
+      <a href="../home.html" class="font-bold text-xl text-[#670b0a]">Feras Khirfan</a>
+    </div>
+  </header>
+
+  <!-- ======= Project Hero ======= -->
+  <section class="bg-gradient-to-r from-[#670b0a] to-[#4a0807] text-white py-16">
+    <div class="container mx-auto px-4 md:px-0">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">Company Portfolio Web Apps</h1>
+      <p class="text-xl mb-8 max-w-2xl">A collection of custom-built Django websites with content management systems, responsive designs, and secure backends for multiple companies.</p>
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Python</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Django</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Flask</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">JavaScript</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">HTML/CSS</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Bootstrap</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Digital Ocean</span>
+        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Responsive Design</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Project Content ======= -->
+  <section class="py-16">
+    <div class="container mx-auto px-4 md:px-0">
+      <div class="grid md:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-bold mb-6">Project Overview</h2>
+          <p class="mb-6">I developed a series of professional portfolio websites for various companies using Django, creating custom content management systems that allow clients to easily update their websites without technical knowledge. Each website features a responsive design, SEO optimization, and secure admin interfaces tailored to the specific needs of each business.</p>
+          
+          
+          <h2 class="text-2xl font-bold mb-6">Key Features</h2>
+          <ul class="list-disc pl-6 space-y-2 mb-8">
+            <li>Custom admin dashboards with role-based permissions for different staff members</li>
+            <li>Intuitive content management system for non-technical users</li>
+            <li>Responsive designs that work seamlessly across all devices</li>
+            <li>Secure authentication with two-factor options for admin access</li>
+            <li>Media library with image optimization for faster page loads</li>
+            <li>Blog/news sections with scheduled publishing features</li>
+            <li>SEO tools integrated into the content editor</li>
+            <li>Contact forms with spam protection and email notifications</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold mb-6">Technical Implementation</h2>
+          <p class="mb-4">Each website was built with a focus on performance, security, and usability:</p>
+          
+          <h3 class="text-xl font-semibold mb-4">1. Django Framework & Architecture</h3>
+          <p class="mb-6">I built these websites using Django's MVT (Model-View-Template) architecture, creating reusable components that could be customized for each client. Using Django's ORM allowed for efficient database operations and the creation of complex data models that accurately represented each business's needs. I implemented Django's class-based views to maintain clean, reusable code across multiple projects.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">2. Custom Admin Interface</h3>
+          <p class="mb-6">While Django provides a powerful admin interface out of the box, I extended and customized it to create user-friendly dashboards tailored to each client's content management needs. This included custom forms with rich text editors, drag-and-drop image uploading, inline editing capabilities, and preview functions that show exactly how content will appear on the live site before publishing.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">3. Responsive Frontend Design</h3>
+          <p class="mb-6">For the frontend, I developed custom templates using Bootstrap for the responsive framework, enhanced with custom CSS and JavaScript. Each site was built with a mobile-first approach, ensuring optimal appearance and functionality on all devices. I implemented lazy loading for images and efficient caching strategies to maintain fast page loads even on content-heavy pages.</p>
+          
+          <h3 class="text-xl font-semibold mb-4">4. Security & Deployment</h3>
+          <p class="mb-6">Security was a top priority for these business websites. I implemented comprehensive security measures including CSRF protection, secure password storage using Django's authentication system, input validation, and regular security updates. For deployment, I utilized AWS infrastructure with load balancing for high-traffic sites, configured proper HTTPS with automatic certificate renewal, and set up automated backups to protect client data.</p>
+          
+          
+          <h2 class="text-2xl font-bold mb-6">Results & Impact</h2>
+          <ul class="list-disc pl-6 space-y-2 mb-8">
+            <li>Successfully delivered and maintained portfolio websites for different companies</li>
+            <li>Improved mobile responsive design</li>
+            <li>Achieved 99.9% uptime across all deployed sites</li>
+            <li>Increased organic search traffic through built-in SEO features</li>
+          </ul>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="md:col-span-1">
+          <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h3 class="text-xl font-semibold mb-4">Project Details</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-medium text-gray-500">Timeline</h4>
+                <p>10 months </p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Role</h4>
+                <p>Full-Stack Developer</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Clients</h4>
+                <p>Multiple Business Clients</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h3 class="text-xl font-semibold mb-4">Technologies Used</h3>
+            <div class="space-y-3">
+              <div>
+                <h4 class="font-medium text-gray-500">Languages</h4>
+                <p>Python, JavaScript, HTML/CSS</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Frameworks & Libraries</h4>
+                <ul class="list-disc pl-5">
+                  <li>Django</li>
+                  <li>Django REST Framework</li>
+                  <li>Django CMS</li>
+                  <li>Flask</li>
+                  <li>Bootstrap</li>
+                  <li>jQuery</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-500">Infrastructure</h4>
+                <ul class="list-disc pl-5">
+                  <li>PostgreSQL</li>
+                  <li>Digital Ocean</li>
+                  <li>Nginx</li>
+                  <li>Gunicorn</li>
+                  <li>Linux</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Additional Skills</h3>
+            <div class="space-y-2">
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Content Management</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">UI/UX Design</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">SEO Optimization</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Database Design</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Web Security</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Performance Tuning</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Cloud Deployment</span>
+              <span class="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm mr-2 mb-2">Client Training</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Footer ======= -->
+  <footer class="bg-black text-gray-400 py-8">
+    <div class="container mx-auto px-4 md:px-0">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h2 class="text-2xl font-bold text-white">Feras Khirfan</h2>
+          <p class="mt-2">AI & Software Developer</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="mailto:feraskwork@gmail.com" aria-label="Email" class="text-gray-400 hover:text-white transition">
+            <i class="fas fa-envelope text-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/feraskhirfan2" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="tel:+966556652125" aria-label="Phone" class="text-gray-400 hover:text-white transition">
+            <i class="fas fa-phone text-xl"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+        <p>© <span id="year"></span> Feras Khirfan. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic Year Script -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html> 
